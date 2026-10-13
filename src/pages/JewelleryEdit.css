@@ -1,0 +1,189 @@
+.jewellery-page {}
+
+/* ─── Hero ─── */
+
+.jewellery-hero {
+  position: relative;
+  height: 92vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.jewellery-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.jewellery-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10,15,35,0.6);
+}
+
+.jewellery-hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--color-white);
+  padding: 0 24px;
+  max-width: 720px;
+}
+
+.jewellery-hero__content h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: var(--color-white);
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.jewellery-hero__content p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  margin-bottom: 36px;
+  letter-spacing: 0.05em;
+}
+
+/* ─── Craft ─── */
+
+.craft-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.craft-card__image img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  margin-bottom: 24px;
+}
+
+.craft-card__body h3 {
+  font-size: 1.4rem;
+  color: var(--color-navy);
+  margin-bottom: 12px;
+}
+
+.craft-card__body p {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* ─── Curation ─── */
+
+.curation-items {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.curation-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.curation-item__num {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--color-gold);
+  font-weight: 300;
+  flex-shrink: 0;
+  line-height: 1;
+  padding-top: 2px;
+}
+
+.curation-item h4 {
+  font-size: 1.05rem;
+  color: var(--color-navy);
+  margin-bottom: 6px;
+}
+
+.curation-item p {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* ─── Quote ─── */
+
+.jewellery-quote blockquote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+  color: var(--color-white);
+  font-style: italic;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.jewellery-quote__attr {
+  font-size: 13px;
+  color: var(--color-gold);
+  margin-top: 20px;
+  letter-spacing: 0.05em;
+}
+
+/* ─── Waitlist ─── */
+
+.waitlist-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 440px;
+  margin: 32px auto 0;
+}
+
+.waitlist-form input {
+  padding: 14px 20px;
+  border: 1px solid var(--color-border);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  outline: none;
+  background: var(--color-white);
+  color: var(--color-text);
+  transition: border-color 0.2s;
+}
+
+.waitlist-form input:focus {
+  border-color: var(--color-navy);
+}
+
+.waitlist-form .btn {
+  align-self: center;
+}
+
+.waitlist-status {
+  padding: 12px 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.waitlist-status--success {
+  background-color: #f0f7f0;
+  color: #2d6a2d;
+  border: 1px solid #c3ddc3;
+}
+
+.waitlist-status--error {
+  background-color: #fdf3f3;
+  color: #8b3131;
+  border: 1px solid #e8c4c4;
+}
+
+/* ─── Responsive ─── */
+
+@media (max-width: 900px) {
+  .craft-grid {
+    grid-template-columns: 1fr;
+  }
+}

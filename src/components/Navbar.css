@@ -1,0 +1,163 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: transparent;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  padding: 0 40px;
+}
+
+.navbar--scrolled {
+  background-color: var(--color-white);
+  box-shadow: 0 1px 20px rgba(0,0,0,0.08);
+}
+
+.navbar__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__logo img {
+  height: 44px;
+  width: auto;
+  transition: filter 0.4s ease;
+}
+
+/* Logo turns white over dark hero */
+.navbar:not(.navbar--scrolled) .navbar__logo img {
+  filter: brightness(0) invert(1);
+}
+
+.navbar__nav {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.navbar__nav a {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 0.2s ease;
+}
+
+/* Nav links turn navy once scrolled */
+.navbar--scrolled .navbar__nav a {
+  color: var(--color-navy);
+}
+
+.navbar__nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-gold);
+  transition: width 0.3s ease;
+}
+
+.navbar__nav a:hover::after,
+.navbar__nav a.active::after {
+  width: 100%;
+}
+
+.navbar__nav a.active {
+  color: var(--color-gold);
+}
+
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.navbar__hamburger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background-color: var(--color-white);
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* Hamburger bars turn navy when scrolled */
+.navbar--scrolled .navbar__hamburger span {
+  background-color: var(--color-navy);
+}
+
+.navbar__hamburger--open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.navbar__hamburger--open span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__hamburger--open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* When mobile menu is open, logo and X button turn navy (white overlay behind them) */
+@media (max-width: 900px) {
+  .navbar--menu-open .navbar__logo img {
+    filter: none;
+  }
+
+  .navbar--menu-open .navbar__hamburger span {
+    background-color: var(--color-navy);
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0 24px;
+  }
+
+  .navbar__hamburger {
+    display: flex;
+  }
+
+  .navbar__nav {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-white);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+  }
+
+  .navbar__nav--open {
+    transform: translateX(0);
+  }
+
+  .navbar__nav a {
+    font-size: 14px;
+    color: var(--color-navy);
+  }
+
+  .navbar__nav a.active {
+    color: var(--color-gold);
+  }
+
+  /* Hamburger bars stay white over dark hero; turn navy when scrolled (inherited from above) */
+}

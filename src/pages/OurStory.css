@@ -1,0 +1,116 @@
+.story-page {}
+
+/* ─── Opening quote ─── */
+
+.story-opening {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.story-opening__quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  color: var(--color-navy);
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.story-opening__sub {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  letter-spacing: 0.08em;
+}
+
+/* ─── Founder quote ─── */
+
+.story-quote {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  font-style: italic;
+  border-left: 2px solid var(--color-gold);
+  padding: 12px 0 12px 24px;
+  margin-top: 28px;
+  line-height: 1.7;
+}
+
+/* ─── Story services ─── */
+
+.story-services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.story-service__image img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  margin-bottom: 24px;
+}
+
+.story-service__body h3 {
+  font-size: 1.4rem;
+  color: var(--color-navy);
+  margin-bottom: 12px;
+}
+
+.story-service__body p {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.story-service__link {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-navy);
+  transition: color 0.2s;
+}
+
+.story-service__link:hover {
+  color: var(--color-gold);
+}
+
+/* ─── Beliefs ─── */
+
+.beliefs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.belief {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.belief__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-gold);
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+.belief p {
+  color: var(--color-text-light);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* ─── Responsive ─── */
+
+@media (max-width: 900px) {
+  .story-services__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
