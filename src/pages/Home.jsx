@@ -100,11 +100,11 @@ export default function Home() {
           <img src="/images/sakshi-portrait.png" alt="Sakshi Seth, Founder of Anaisa" />
         </div>
         <div className="founder-section__text">
-          <p className="section-label">Our Story</p>
+          <p className="section-label">About the Founder</p>
           <h2>"For 18 years my heart was somewhere else entirely. Anaisa is where it landed."</h2>
-          <p className="founder-section__attr">— Sakshi Seth, Founder</p>
+          <p className="founder-section__attr">Sakshi Seth — Founder, Anaisa</p>
           <div className="divider divider-left" />
-          <p>Built on a foundation of beauty, detail, and intentionality, Anaisa brings together three distinct worlds — property, botanicals, and jewellery — under a single ethos of care.</p>
+          <p>Anaisa was born from a deep love of beauty, detail, and the belief that the things we surround ourselves with should feel intentional and deeply personal.</p>
           <Link to="/our-story" className="btn btn-outline">Read our story</Link>
         </div>
       </section>
